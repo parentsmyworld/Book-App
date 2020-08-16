@@ -26,7 +26,9 @@ class MyApp extends StatelessWidget {
                 TextField(
                   controller: title,
                   decoration: InputDecoration(
-border: OutlineInputBorder(),
+border: OutlineInputBorder(
+  borderRadius: BorderRadius.circular(10.0)
+),
                     hintText: "Enter Title Of The Book",
                     prefixIcon: Icon(Icons.book)
                   ),
@@ -37,7 +39,9 @@ border: OutlineInputBorder(),
               TextField(
                 controller: author,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0)
+                  ),
                   hintText: "Enter Author's Name",
                   prefixIcon: Icon(Icons.person)
                 ),
@@ -46,7 +50,9 @@ border: OutlineInputBorder(),
                 TextField(
                   controller: description,
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0)
+                    ),
                     hintText: "Description of the book",
                     prefixIcon: Icon(Icons.keyboard)
                   ),
@@ -55,28 +61,39 @@ border: OutlineInputBorder(),
                 TextField(
                   controller: price,
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0)
+                    ),
                     hintText: "Price of the book",
                     prefixIcon: Icon(Icons.attach_money)
                   ),
                 ),
                 SizedBox(height: 20.0,),
-                Center(
-                  child: RaisedButton(
-                    onPressed: (){
-                      var a=title.text;
-                      var b=author.text;
-                      var c=description.text;
-                      var d=price.text;
-                      print(a);
-                      print(b);
-                      print(c);
-                      print(d);
-                    },
-                    color: Colors.blue,
-                    child: Text("SUBMIT"),
-                  ),
-                )
+Container(
+  decoration: BoxDecoration(
+    color: Colors.blue,
+    borderRadius: BorderRadius.circular(10.0)
+  ),
+  
+  height: 60.0,
+  child: Center(child: Text("SUBMIT")),
+)
+//                Center(
+//                  child: RaisedButton(
+//                    onPressed: (){
+//                      var a=title.text;
+//                      var b=author.text;
+//                      var c=description.text;
+//                      var d=price.text;
+//                      print(a);
+//                      print(b);
+//                      print(c);
+//                      print(d);
+//                    },
+//                    color: Colors.blue,
+//                    child: Text("SUBMIT"),
+//                  ),
+//                )
 
               ],
             ),
