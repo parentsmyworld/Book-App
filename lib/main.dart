@@ -15,9 +15,11 @@ class MyApp extends StatelessWidget {
         body:SingleChildScrollView(
           child: Container(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text("Title"),
-                TextField(),
+                TextField(
+                ),
               Text("Author"),
               TextField(),
                 Text("Description"),
