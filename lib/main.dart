@@ -4,6 +4,10 @@ void main(){
   runApp(MyApp());
 }
 class MyApp extends StatelessWidget {
+  TextEditingController title=TextEditingController();
+  TextEditingController author=TextEditingController();
+  TextEditingController description=TextEditingController();
+  TextEditingController price=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,20 +18,64 @@ class MyApp extends StatelessWidget {
         ),
         body:SingleChildScrollView(
           child: Container(
+            padding: EdgeInsets.all(10.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Title"),
+                SizedBox(height: 20.0,),
                 TextField(
+                  controller: title,
+                  decoration: InputDecoration(
+border: OutlineInputBorder(),
+                    hintText: "Enter Title Of The Book",
+                    prefixIcon: Icon(Icons.book)
+                  ),
+
                 ),
-              Text("Author"),
-              TextField(),
-                Text("Description"),
-                TextField(),
-                Text("Price"),
-                TextField(),
-                RaisedButton(
-                  child: Text("SUBMIT"),
+              SizedBox(height: 20.0,),
+
+              TextField(
+                controller: author,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: "Enter Author's Name",
+                  prefixIcon: Icon(Icons.person)
+                ),
+              ),
+                SizedBox(height: 20.0,),
+                TextField(
+                  controller: description,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: "Description of the book",
+                    prefixIcon: Icon(Icons.keyboard)
+                  ),
+                ),
+                SizedBox(height: 20.0,),
+                TextField(
+                  controller: price,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: "Price of the book",
+                    prefixIcon: Icon(Icons.attach_money)
+                  ),
+                ),
+                SizedBox(height: 20.0,),
+                Center(
+                  child: RaisedButton(
+                    onPressed: (){
+                      var a=title.text;
+                      var b=author.text;
+                      var c=description.text;
+                      var d=price.text;
+                      print(a);
+                      print(b);
+                      print(c);
+                      print(d);
+                    },
+                    color: Colors.blue,
+                    child: Text("SUBMIT"),
+                  ),
                 )
 
               ],
